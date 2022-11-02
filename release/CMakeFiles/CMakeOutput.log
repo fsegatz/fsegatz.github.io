@@ -1,0 +1,72 @@
+The target system is: Emscripten - 1 - x86
+The host system is: Windows - 10.0.22000 - AMD64
+Performing C++ SOURCE FILE Test HAVE_STDATOMIC succeeded with the following output:
+Change Dir: C:/Users/Fabian/developement/personalpage/release/CMakeFiles/CMakeTmp
+
+Run Build Command(s):jom -f Makefile /nologo cmTC_3a2d6\fast && jom: parallel job execution disabled for Makefile
+	C:\Qt\Tools\QtCreator\bin\jom\jom.exe  -f CMakeFiles\cmTC_3a2d6.dir\build.make /nologo -L CMakeFiles\cmTC_3a2d6.dir\build
+Building CXX object CMakeFiles/cmTC_3a2d6.dir/src.cxx.o
+	C:\Users\Fabian\emsdk\upstream\emscripten\em++.bat -DHAVE_STDATOMIC  -std=gnu++17 -MD -MT CMakeFiles\cmTC_3a2d6.dir\src.cxx.o -MF CMakeFiles\cmTC_3a2d6.dir\src.cxx.o.d -o CMakeFiles\cmTC_3a2d6.dir\src.cxx.o -c C:\Users\Fabian\developement\personalpage\release\CMakeFiles\CMakeTmp\src.cxx
+Linking CXX executable cmTC_3a2d6.js
+	C:\Users\Fabian\emsdk\upstream\emscripten\em++.bat @CMakeFiles\cmTC_3a2d6.dir\objects1.rsp -o cmTC_3a2d6.js
+
+
+Source file was:
+#include <atomic>
+#include <cstdint>
+
+void test(volatile std::atomic<std::int64_t> &a)
+{
+    std::int64_t v = a.load(std::memory_order_acquire);
+    while (!a.compare_exchange_strong(v, v + 1,
+                                      std::memory_order_acq_rel,
+                                      std::memory_order_acquire)) {
+        v = a.exchange(v - 1);
+    }
+    a.store(v + 1, std::memory_order_release);
+}
+
+int main(int, char **)
+{
+    void *ptr = (void*)0xffffffc0; // any random pointer
+    test(*reinterpret_cast<std::atomic<std::int64_t> *>(ptr));
+    return 0;
+}
+Performing C++ SOURCE FILE Test HAVE_GETTIME succeeded with the following output:
+Change Dir: C:/Users/Fabian/developement/personalpage/release/CMakeFiles/CMakeTmp
+
+Run Build Command(s):jom -f Makefile /nologo cmTC_afbc5\fast && jom: parallel job execution disabled for Makefile
+	C:\Qt\Tools\QtCreator\bin\jom\jom.exe  -f CMakeFiles\cmTC_afbc5.dir\build.make /nologo -L CMakeFiles\cmTC_afbc5.dir\build
+Building CXX object CMakeFiles/cmTC_afbc5.dir/src.cxx.o
+	C:\Users\Fabian\emsdk\upstream\emscripten\em++.bat -DHAVE_GETTIME  -std=gnu++17 -MD -MT CMakeFiles\cmTC_afbc5.dir\src.cxx.o -MF CMakeFiles\cmTC_afbc5.dir\src.cxx.o.d -o CMakeFiles\cmTC_afbc5.dir\src.cxx.o -c C:\Users\Fabian\developement\personalpage\release\CMakeFiles\CMakeTmp\src.cxx
+Linking CXX executable cmTC_afbc5.js
+	C:\Users\Fabian\emsdk\upstream\emscripten\em++.bat @CMakeFiles\cmTC_afbc5.dir\objects1.rsp -o cmTC_afbc5.js
+
+
+Source file was:
+
+#include <unistd.h>
+#include <time.h>
+
+int main(int argc, char *argv[]) {
+    timespec ts; clock_gettime(CLOCK_REALTIME, &ts);
+}
+Performing C++ SOURCE FILE Test HAVE_EGL succeeded with the following output:
+Change Dir: C:/Users/Fabian/developement/personalpage/release/CMakeFiles/CMakeTmp
+
+Run Build Command(s):jom -f Makefile /nologo cmTC_e264c\fast && jom: parallel job execution disabled for Makefile
+	C:\Qt\Tools\QtCreator\bin\jom\jom.exe  -f CMakeFiles\cmTC_e264c.dir\build.make /nologo -L CMakeFiles\cmTC_e264c.dir\build
+Building CXX object CMakeFiles/cmTC_e264c.dir/src.cxx.o
+	C:\Users\Fabian\emsdk\upstream\emscripten\em++.bat -DHAVE_EGL @CMakeFiles/cmTC_e264c.dir/includes_CXX.rsp -std=gnu++17 -MD -MT CMakeFiles\cmTC_e264c.dir\src.cxx.o -MF CMakeFiles\cmTC_e264c.dir\src.cxx.o.d -o CMakeFiles\cmTC_e264c.dir\src.cxx.o -c C:\Users\Fabian\developement\personalpage\release\CMakeFiles\CMakeTmp\src.cxx
+Linking CXX executable cmTC_e264c.js
+	C:\Users\Fabian\emsdk\upstream\emscripten\em++.bat @CMakeFiles\cmTC_e264c.dir\objects1.rsp -o cmTC_e264c.js
+
+
+Source file was:
+
+#include <EGL/egl.h>
+
+int main(int argc, char *argv[]) {
+    EGLint x = 0; EGLDisplay dpy = 0; EGLContext ctx = 0;
+    eglDestroyContext(dpy, ctx);
+}
