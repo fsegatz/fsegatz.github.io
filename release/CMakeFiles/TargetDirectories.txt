@@ -4,5 +4,11 @@ C:/Users/Fabian/developement/personalpage/release/main/CMakeFiles/index.dir
 C:/Users/Fabian/developement/personalpage/release/main/CMakeFiles/edit_cache.dir
 C:/Users/Fabian/developement/personalpage/release/main/CMakeFiles/rebuild_cache.dir
 C:/Users/Fabian/developement/personalpage/release/main/CMakeFiles/index_autogen.dir
-C:/Users/Fabian/developement/personalpage/release/widgets/CMakeFiles/edit_cache.dir
-C:/Users/Fabian/developement/personalpage/release/widgets/CMakeFiles/rebuild_cache.dir
+C:/Users/Fabian/developement/personalpage/release/widgets/mainwidget/CMakeFiles/mainwidget.dir
+C:/Users/Fabian/developement/personalpage/release/widgets/mainwidget/CMakeFiles/edit_cache.dir
+C:/Users/Fabian/developement/personalpage/release/widgets/mainwidget/CMakeFiles/rebuild_cache.dir
+C:/Users/Fabian/developement/personalpage/release/widgets/mainwidget/CMakeFiles/mainwidget_autogen.dir
+C:/Users/Fabian/developement/personalpage/release/widgets/menuwidget/CMakeFiles/menuwidget.dir
+C:/Users/Fabian/developement/personalpage/release/widgets/menuwidget/CMakeFiles/edit_cache.dir
+C:/Users/Fabian/developement/personalpage/release/widgets/menuwidget/CMakeFiles/rebuild_cache.dir
+C:/Users/Fabian/developement/personalpage/release/widgets/menuwidget/CMakeFiles/menuwidget_autogen.dir

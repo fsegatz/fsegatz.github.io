@@ -36,10 +36,11 @@
 	],
 	"MOC_INCLUDES" : 
 	[
-		"C:/Qt/6.2.4/wasm_32/include/QtCore",
-		"C:/Qt/6.2.4/wasm_32/include",
-		"C:/Qt/6.2.4/wasm_32/mkspecs/wasm-emscripten",
+		"C:/Users/Fabian/developement/personalpage/widgets/mainwidget",
 		"C:/Qt/6.2.4/wasm_32/include/QtWidgets",
+		"C:/Qt/6.2.4/wasm_32/include",
+		"C:/Qt/6.2.4/wasm_32/include/QtCore",
+		"C:/Qt/6.2.4/wasm_32/mkspecs/wasm-emscripten",
 		"C:/Qt/6.2.4/wasm_32/include/QtGui"
 	],
 	"MOC_MACRO_NAMES" : [ "Q_OBJECT", "Q_GADGET", "Q_NAMESPACE", "Q_NAMESPACE_EXPORT" ],

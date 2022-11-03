@@ -1,0 +1,153 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1,
+						2,
+						3
+					],
+					"jsonFile" : "directory-.-Release-d0094a50bb2071803777.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"projectIndex" : 0,
+					"source" : "."
+				},
+				{
+					"build" : "main",
+					"jsonFile" : "directory-main-Release-72090c4a4cf973f97e42.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "main",
+					"targetIndexes" : 
+					[
+						0,
+						1
+					]
+				},
+				{
+					"build" : "widgets/mainwidget",
+					"jsonFile" : "directory-widgets.mainwidget-Release-5816704a21e36a57c9b7.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "widgets/mainwidget",
+					"targetIndexes" : 
+					[
+						2,
+						3
+					]
+				},
+				{
+					"build" : "widgets/menuwidget",
+					"jsonFile" : "directory-widgets.menuwidget-Release-042ca0f81cc666882563.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "widgets/menuwidget",
+					"targetIndexes" : 
+					[
+						4,
+						5
+					]
+				}
+			],
+			"name" : "Release",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3
+					],
+					"name" : "index",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 1,
+					"id" : "index::@15c4a824ab2728a3f5e7",
+					"jsonFile" : "target-index-Release-7f0ea2056d6d7ca54c92.json",
+					"name" : "index",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "index_autogen::@15c4a824ab2728a3f5e7",
+					"jsonFile" : "target-index_autogen-Release-e0a449e57de6397ae56e.json",
+					"name" : "index_autogen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "mainwidget::@c6cfe847bbb7b0aea170",
+					"jsonFile" : "target-mainwidget-Release-ebb35ba9329a03dc056c.json",
+					"name" : "mainwidget",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "mainwidget_autogen::@c6cfe847bbb7b0aea170",
+					"jsonFile" : "target-mainwidget_autogen-Release-a0c16343c9fd4043add2.json",
+					"name" : "mainwidget_autogen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "menuwidget::@9f503ae0b340dd8e04cd",
+					"jsonFile" : "target-menuwidget-Release-0f07388c988edede46b8.json",
+					"name" : "menuwidget",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 3,
+					"id" : "menuwidget_autogen::@9f503ae0b340dd8e04cd",
+					"jsonFile" : "target-menuwidget_autogen-Release-584d2e87045470c073fd.json",
+					"name" : "menuwidget_autogen",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "C:/Users/Fabian/developement/personalpage/release",
+		"source" : "C:/Users/Fabian/developement/personalpage"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 4
+	}
+}

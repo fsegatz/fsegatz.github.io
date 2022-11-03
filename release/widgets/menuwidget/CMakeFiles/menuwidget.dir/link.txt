@@ -1,0 +1,2 @@
+C:\Users\Fabian\emsdk\upstream\emscripten\emar.bat qc libmenuwidget.a CMakeFiles/menuwidget.dir/menuwidget_autogen/mocs_compilation.cpp.o CMakeFiles/menuwidget.dir/menuwidget.cpp.o
+C:\Users\Fabian\emsdk\upstream\emscripten\emranlib.bat libmenuwidget.a

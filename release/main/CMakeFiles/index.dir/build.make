@@ -151,7 +151,7 @@ main\index.js: C:\Qt\6.2.4\wasm_32\lib\objects-Release\Widgets_resources_2\.rcc\
 main\index.js: C:\Qt\6.2.4\wasm_32\lib\objects-Release\Widgets_resources_3\.rcc\qrc_qmessagebox.cpp.o
 main\index.js: C:\Qt\6.2.4\wasm_32\lib\objects-Release\QWasmIntegrationPlugin_resources_1\.rcc\qrc_wasmfonts.cpp.o
 main\index.js: C:\Qt\6.2.4\wasm_32\lib\objects-Release\Gui_resources_1\.rcc\qrc_qpdf.cpp.o
-main\index.js: C:\Qt\6.2.4\wasm_32\lib\libQt6Core.a
+main\index.js: widgets\mainwidget\libmainwidget.a
 main\index.js: C:\Qt\6.2.4\wasm_32\lib\libQt6Widgets.a
 main\index.js: C:\Qt\6.2.4\wasm_32\.\plugins\imageformats\libqgif.a
 main\index.js: C:\Qt\6.2.4\wasm_32\.\plugins\imageformats\libqico.a
@@ -159,6 +159,8 @@ main\index.js: C:\Qt\6.2.4\wasm_32\.\plugins\imageformats\libqjpeg.a
 main\index.js: C:\Qt\6.2.4\wasm_32\.\plugins\iconengines\libqsvgicon.a
 main\index.js: C:\Qt\6.2.4\wasm_32\.\plugins\imageformats\libqsvg.a
 main\index.js: C:\Qt\6.2.4\wasm_32\.\plugins\platforms\libqwasm.a
+main\index.js: widgets\menuwidget\libmenuwidget.a
+main\index.js: C:\Qt\6.2.4\wasm_32\lib\libQt6Widgets.a
 main\index.js: C:\Qt\6.2.4\wasm_32\lib\libQt6Svg.a
 main\index.js: C:\Qt\6.2.4\wasm_32\lib\libQt6OpenGL.a
 main\index.js: C:\Qt\6.2.4\wasm_32\lib\libQt6Gui.a

@@ -38,10 +38,18 @@ if(NOT DEFINED CMAKE_OBJDUMP)
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
-  # Include the install script for each subdirectory.
+  # Include the install script for the subdirectory.
   include("C:/Users/Fabian/developement/personalpage/release/main/cmake_install.cmake")
-  include("C:/Users/Fabian/developement/personalpage/release/widgets/cmake_install.cmake")
+endif()
 
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
+  include("C:/Users/Fabian/developement/personalpage/release/widgets/mainwidget/cmake_install.cmake")
+endif()
+
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
+  include("C:/Users/Fabian/developement/personalpage/release/widgets/menuwidget/cmake_install.cmake")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT)

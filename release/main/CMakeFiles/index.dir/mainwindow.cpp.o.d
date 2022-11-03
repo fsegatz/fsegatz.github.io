@@ -190,4 +190,16 @@ main\CMakeFiles\index.dir\mainwindow.cpp.o: \
   C:\Qt\6.2.4\wasm_32\include\QtGui\qbitmap.h \
   C:\Qt\6.2.4\wasm_32\include\QtGui\qkeysequence.h \
   C:\Qt\6.2.4\wasm_32\include\QtWidgets\qtabwidget.h \
-  C:\Qt\6.2.4\wasm_32\include\QtGui\qicon.h
+  C:\Qt\6.2.4\wasm_32\include\QtGui\qicon.h \
+  C:\Users\Fabian\developement\personalpage\widgets\mainwidget\mainwidget.h \
+  C:\Qt\6.2.4\wasm_32\include\QtWidgets\QWidget \
+  C:\Qt\6.2.4\wasm_32\include\QtWidgets\qwidget.h \
+  C:\Qt\6.2.4\wasm_32\include\QtWidgets\QVBoxLayout \
+  C:\Qt\6.2.4\wasm_32\include\QtWidgets\qboxlayout.h \
+  C:\Qt\6.2.4\wasm_32\include\QtWidgets\qlayout.h \
+  C:\Qt\6.2.4\wasm_32\include\QtWidgets\qlayoutitem.h \
+  C:\Qt\6.2.4\wasm_32\include\QtWidgets\qboxlayout.h \
+  C:\Qt\6.2.4\wasm_32\include\QtWidgets\qgridlayout.h \
+  C:\Qt\6.2.4\wasm_32\include\QtWidgets\QPushButton \
+  C:\Qt\6.2.4\wasm_32\include\QtWidgets\qpushbutton.h \
+  C:\Qt\6.2.4\wasm_32\include\QtWidgets\qabstractbutton.h
