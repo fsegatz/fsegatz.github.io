@@ -1,1 +1,0 @@
--IC:/Users/Fabian/developement/personalpage/release/main/index_autogen/include -IC:/Users/Fabian/developement/personalpage/widgets/mainwidget -isystem C:/Qt/6.2.4/wasm_32/include/QtWidgets -isystem C:/Qt/6.2.4/wasm_32/include -isystem C:/Qt/6.2.4/wasm_32/include/QtCore -isystem "C:/Qt/6.2.4/wasm_32/mkspecs/wasm-emscripten" -isystem C:/Qt/6.2.4/wasm_32/include/QtGui

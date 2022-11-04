@@ -1,2 +1,0 @@
-C:\Users\Fabian\emsdk\upstream\emscripten\emar.bat qc libmainwidget.a CMakeFiles/mainwidget.dir/mainwidget_autogen/mocs_compilation.cpp.o CMakeFiles/mainwidget.dir/mainwidget.cpp.o
-C:\Users\Fabian\emsdk\upstream\emscripten\emranlib.bat libmainwidget.a

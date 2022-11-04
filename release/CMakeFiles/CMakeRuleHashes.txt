@@ -1,4 +1,0 @@
-# Hashes of file build rules.
-9eee0efa6e8f747e61cb8fe40d2b9a0b main/CMakeFiles/index_autogen
-818bdbd776f17ae76cf971e8ff451d82 widgets/mainwidget/CMakeFiles/mainwidget_autogen
-74db7b3cc0a517c3ed8e2cb09a330634 widgets/menuwidget/CMakeFiles/menuwidget_autogen
