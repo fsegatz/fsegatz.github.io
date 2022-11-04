@@ -4,6 +4,7 @@ add_library(mainwidget STATIC
 )
 
 target_link_libraries(mainwidget PRIVATE
+    aboutmewidget
     menuwidget
     Qt6::Widgets
 )
