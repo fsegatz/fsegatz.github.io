@@ -15,8 +15,10 @@ MainWidget::MainWidget(QWidget *parent)
 
     QVBoxLayout *layout = new QVBoxLayout(this);
     layout->addWidget(tab, Qt::AlignTop);
-    tab->addTab(aboutme, "ABOUT ME");
-    tab->addTab(menu, "TEST");
+    tab->addTab(aboutme, "About Me");
+    tab->addTab(menu, "Test");
+    tab->setStyleSheet("QTabWidget::tab-bar {alignment: center}");
+    tab->setFont(QFont("Helvetica", 18));
     layout->addStretch();
     setLayout(layout);
 }
