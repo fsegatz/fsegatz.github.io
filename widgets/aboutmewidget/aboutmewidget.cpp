@@ -9,8 +9,13 @@
 AboutMeWidget::AboutMeWidget(QWidget *parent)
     : QWidget{parent}
 {
+    Q_INIT_RESOURCE(resources);
     QLabel *picture = new QLabel(this);
     picture->setAlignment(Qt::AlignHCenter);
+    QPixmap *pixmap = new QPixmap(":/data/profilepicture.jpg");
+    *pixmap = pixmap->scaledToWidth(160, Qt::FastTransformation);
+    picture->setPixmap(*pixmap);
+
     QLabel *name = new QLabel(this);
     name->setText("Fabian Segatz");
     name->setFont(QFont("Helvetica", 28));
@@ -39,4 +44,5 @@ AboutMeWidget::AboutMeWidget(QWidget *parent)
 
 AboutMeWidget::~AboutMeWidget()
 {
+    Q_CLEANUP_RESOURCE(resources);
 }

@@ -1,6 +1,7 @@
 add_library(aboutmewidget STATIC
     aboutmewidget.cpp
     aboutmewidget.h
+    resources.qrc
 )
 
 target_link_libraries(aboutmewidget PRIVATE
