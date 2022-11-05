@@ -2,6 +2,8 @@
 
 #include <QLabel>
 #include <QPixmap>
+#include <QFrame>
+#include <QRegion>
 #include <QPushButton>
 #include <QVBoxLayout>
 #include <QFont>
@@ -10,11 +12,14 @@ AboutMeWidget::AboutMeWidget(QWidget *parent)
     : QWidget{parent}
 {
     Q_INIT_RESOURCE(resources);
-    QLabel *picture = new QLabel(this);
-    picture->setAlignment(Qt::AlignHCenter);
     QPixmap *pixmap = new QPixmap(":/data/profilepicture.jpg");
-    *pixmap = pixmap->scaledToWidth(160, Qt::FastTransformation);
+
+    QLabel *picture = new QLabel(this);
     picture->setPixmap(*pixmap);
+    picture->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
+    picture->setFixedSize(160, 160);
+    picture->setScaledContents(true);
+    picture->setMask(QRegion(0,0, picture->width(), picture->height(), QRegion::Ellipse));
 
     QLabel *name = new QLabel(this);
     name->setText("Fabian Segatz");
@@ -34,7 +39,7 @@ AboutMeWidget::AboutMeWidget(QWidget *parent)
 
     QVBoxLayout *layout = new QVBoxLayout(this);
 
-    layout->addWidget(picture, 0, Qt::AlignTop);
+    layout->addWidget(picture, 0, Qt::AlignHCenter);
     layout->addWidget(name);
     layout->addWidget(description);
     layout->addWidget(contact, 0,Qt::AlignHCenter);
