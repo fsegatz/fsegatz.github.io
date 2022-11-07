@@ -26,12 +26,15 @@ AboutMeWidget::AboutMeWidget(QWidget *parent)
     name->setFont(QFont("Helvetica", 28));
     name->setAlignment(Qt::AlignHCenter);
     QLabel *description = new QLabel(this);
+    description->setTextFormat(Qt::MarkdownText);
     description->setText(
-                "Master's student for Embedded Systems at KTH Royal Institute of Technology\n"
-                "Embedded Software Engineer at Cobolt AB"
+                "Master's student for Embedded Systems at [KTH Royal Institute of Technology](https://www.kth.se/en)<br />"
+                "Embedded Software Engineer at [Cobolt AB](https://www.linkedin.com/company/cobolt-ab/)"
         );
     description->setFont(QFont("Helvetica", 12));
     description->setAlignment(Qt::AlignHCenter);
+    description->setTextInteractionFlags(Qt::TextBrowserInteraction);
+    description->setOpenExternalLinks(true);
     QPushButton *contact = new QPushButton(this);
     contact->setText("Contact me");
     contact->setFont(QFont("Helvetica", 12));
