@@ -27,8 +27,6 @@ jobs:
           path: emsdk
       - run: ./emsdk/emsdk install 2.0.14
       - run: ./emsdk/emsdk activate 2.0.14
-
-      - name: Add EM to path
       - run: source /emsdk/emsdk_env.sh
       - run: em++ --version
 
@@ -36,7 +34,7 @@ jobs:
         uses: actions/checkout@v3
         with:
           repository: qt/qt5
-          ref: 'v6.2.4'
+          ref: v6.2.4
           path: qt6
       # - run: perl /qt6/init-repository --module-subset=qtbase
       # - run: mkdir qt6-build
