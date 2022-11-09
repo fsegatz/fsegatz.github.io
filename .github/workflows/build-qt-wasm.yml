@@ -1,0 +1,30 @@
+name: Build qt-wasm and store build output in new branch
+
+on:
+  push:
+    branches:
+      - main
+      - action_dev
+
+permissions:
+  deployments: write
+  pages: write
+
+env:
+  VERSION: test
+
+jobs:
+  deploy:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Install Emscripten
+        uses: actions/checkout@v3
+        with:
+          repository: 'https://github.com/juj/emsdk.git'
+          path: emsdk
+      - run: ./emsdk/emsdk install 2.0.14
+      - run: ./emsdk/emsdk activate 2.0.14
+      - run: em++ --version
