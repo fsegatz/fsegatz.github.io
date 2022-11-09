@@ -24,8 +24,8 @@ jobs:
           path: emsdk
       - run: ./emsdk/emsdk install 2.0.14
       - run: ./emsdk/emsdk activate 2.0.14
-      - run: source emsdk/emsdk_env.sh
-      - run: em++ --version
+      # - run: source emsdk/emsdk_env.sh
+      # - run: em++ --version
 
   qt6:
     runs-on: ubuntu-20.04
@@ -36,7 +36,7 @@ jobs:
           repository: qt/qt5
           ref: v6.2.4
           path: qt6
-      - run: perl /qt6/init-repository --module-subset=qtbase
+      - run: perl qt6/init-repository --module-subset=qtbase
       # - run: mkdir qt6-build
       - run: ./qt6/configure -prefix $PWD/qtbase
       - run: cmake --build .
