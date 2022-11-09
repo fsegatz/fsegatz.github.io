@@ -23,7 +23,7 @@ jobs:
       - name: Install Emscripten
         uses: actions/checkout@v3
         with:
-          repository: 'emscripten-core/emsdk.git'
+          repository: emscripten-core/emsdk
           path: emsdk
       - run: ./emsdk/emsdk install 2.0.14
       - run: ./emsdk/emsdk activate 2.0.14
