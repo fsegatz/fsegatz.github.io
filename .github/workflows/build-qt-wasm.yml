@@ -36,10 +36,11 @@ jobs:
           repository: qt/qt5
           ref: v6.2.4
           path: qt6
-      - run: perl qt6/init-repository --module-subset=qtbase
-      # - run: mkdir qt6-build
-      - run: ./qt6/configure -prefix $PWD/qtbase
-      - run: cmake --build .
+      - run: |
+          cd qt6
+          perl init-repository --module-subset=qtbase
+          ./configure -prefix $PWD/qtbase
+          cmake --build .
 
   deploy:
     needs: [emsdk, qt6]
