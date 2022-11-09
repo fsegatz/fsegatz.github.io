@@ -48,7 +48,7 @@ jobs:
         run: |
           cd qt6
           ./configure -prefix $PWD/qtbase
-          cmake --build .
+          cmake --build . --parallel 2
 
   deploy:
     needs: [emsdk, qt6]
