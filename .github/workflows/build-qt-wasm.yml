@@ -22,7 +22,9 @@ jobs:
         with:
           repository: emscripten-core/emsdk
           path: emsdk
+      - name: Install emsdk 2.0.14
       - run: ./emsdk/emsdk install 2.0.14
+      - name: Activate emsdk 2.0.14
       - run: ./emsdk/emsdk activate 2.0.14
       # - run: source emsdk/emsdk_env.sh
       # - run: em++ --version
@@ -30,15 +32,21 @@ jobs:
   qt6:
     runs-on: ubuntu-20.04
     steps:
+      - name: Install dependencies
+        run: sudo apt install ninja-build
       - name: Install QT6
         uses: actions/checkout@v3
         with:
           repository: qt/qt5
           ref: v6.2.4
           path: qt6
+      - name: Initialize QT repository
       - run: |
           cd qt6
           perl init-repository --module-subset=qtbase
+      - name: Configure and build QT
+      - run: |
+          cd qt6
           ./configure -prefix $PWD/qtbase
           cmake --build .
 
