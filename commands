@@ -27,4 +27,7 @@ aqt install-qt windows desktop 6.6.0 wasm_singlethread --autodesktop -O .qt
 .\.qt\6.6.0\wasm_singlethread\bin\qt-cmake.bat -G "MinGW Makefiles" -B .build -S . -DQT_HOST_PATH=".qt/6.6.0/mingw_64" -DCMAKE_PREFIX_PATH=".qt/6.6.0/wasm_singlethread" -DCMAKE_MAKE_PROGRAM="C:/Qt/Tools/mingw810_64/bin/mingw32-make.exe"
 
 #Build application
-cmake --build .build --config Debug
+cmake --build .build
+
+#Run application
+emrun --browser=chrome .\.build\src\qttest.html  
