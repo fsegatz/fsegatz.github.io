@@ -1,0 +1,3 @@
+add_subdirectory(mainwidget)
+add_subdirectory(menuwidget)
+add_subdirectory(aboutmewidget)
