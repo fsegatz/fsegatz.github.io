@@ -37,7 +37,7 @@ jobs:
         run: source .emsdk/emsdk_env.sh
 
       - name: Install QT
-        run: py -m aqt install-qt linux desktop 6.6.0 wasm_singlethread --autodesktop -O .qt
+        run: python -m aqt install-qt linux desktop 6.6.0 wasm_singlethread --autodesktop -O .qt
 
       - name: Create Build System
         run: .\.qt\6.6.0\wasm_singlethread\bin\qt-cmake.bat -G "Unix Makefiles" -B .build -S . -DQT_HOST_PATH=".qt/6.6.0/gcc_64" -DCMAKE_PREFIX_PATH=".qt/6.6.0/wasm_singlethread"
@@ -52,3 +52,7 @@ jobs:
           BRANCH: gh-pages
           FOLDER: .build/main
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup tmate session
+        if: failure()
+        uses: mxschmitt/action-tmate@v3
