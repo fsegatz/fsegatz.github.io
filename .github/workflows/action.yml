@@ -1,0 +1,51 @@
+name: Build and deploy to gh-pages branch
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Setup Python
+        uses: actions/setup-python@v4.7.1
+        with:
+          python-version: 3.11
+          cache: 'pip'
+
+      - name: Checkout code
+        uses: actions/checkout@v4.1.1
+
+      - name: Checkout emsdk
+        uses: actions/checkout@v4.1.1
+        with:
+          repository: emscripten-core/emsdk
+          path: .emsdk
+
+      - name: Install emsdk
+        run: .emsdk/emsdk install 3.1.37
+
+      - name: Activate emsdk
+        run: .emsdk/emsdk activate 3.1.37
+
+      - name: Add emsdk to path
+        run: source .emsdk/emsdk_env.sh
+
+      - name: Install QT
+        run: py -m aqt install-qt linux desktop 6.6.0 wasm_singlethread --autodesktop -O .qt
+
+      - name: Create Build System
+        run: .\.qt\6.6.0\wasm_singlethread\bin\qt-cmake.bat -G "Unix Makefiles" -B .build -S . -DQT_HOST_PATH=".qt/6.6.0/gcc_64" -DCMAKE_PREFIX_PATH=".qt/6.6.0/wasm_singlethread"
+
+      - name: Build Application
+        run: cmake --build .build
+
+      - name: Deploy
+        uses: s0/git-publish-subdir-action@2.6.0
+        env:
+          REPO: self
+          BRANCH: gh-pages
+          FOLDER: .build/main
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
