@@ -46,7 +46,7 @@ jobs:
           key: qt
 
       - name: Create Build System
-        run: .qt/6.6.0/wasm_singlethread/bin/qt-cmake -G "Unix Makefiles" -B .build -S . -DQT_HOST_PATH=".qt/6.6.0/gcc_64" -DCMAKE_PREFIX_PATH=".qt/6.6.0/wasm_singlethread"
+        run: bash .qt/6.6.0/wasm_singlethread/bin/qt-cmake -G "Unix Makefiles" -B .build -S . -DQT_HOST_PATH=".qt/6.6.0/gcc_64" -DCMAKE_PREFIX_PATH=".qt/6.6.0/wasm_singlethread"
 
       - name: Build Application
         run: cmake --build .build
