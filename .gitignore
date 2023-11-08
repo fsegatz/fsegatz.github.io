@@ -2,3 +2,7 @@
 .qt
 .venv
 .build
+.emsdk
+
+# Files types
+*.log

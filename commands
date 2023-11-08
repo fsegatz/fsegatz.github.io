@@ -1,5 +1,7 @@
+### WINDOWS ###
+
 #Install aqt
-aqt install-qt windows desktop 6.6.0 win64_msvc2019_64
+aqt install-qt windows desktop 6.6.0 win64_msvc2019_64 -O .qt
 
 #Create Build System
 .\.qt\6.6.0\msvc2019_64\bin\qt-cmake.bat -B .build -S . 
@@ -9,3 +11,20 @@ cmake --build .build --target ALL_BUILD --config Debug
 
 #Deploy application
 .\.qt\6.6.0\msvc2019_64\bin\windeployqt.exe .\.build\Debug
+
+### WASM ###
+
+#Install emsdk
+
+git clone https://github.com/emscripten-core/emsdk.git .emsdk
+./.emsdk/emsdk install 3.1.37
+./.emsdk/emsdk activate 3.1.37
+
+#Install aqt
+aqt install-qt windows desktop 6.6.0 wasm_singlethread --autodesktop -O .qt
+
+#Create Build System
+.\.qt\6.6.0\wasm_singlethread\bin\qt-cmake.bat -G "MinGW Makefiles" -B .build -S . -DQT_HOST_PATH=".qt/6.6.0/mingw_64" -DCMAKE_PREFIX_PATH=".qt/6.6.0/wasm_singlethread" -DCMAKE_MAKE_PROGRAM="C:/Qt/Tools/mingw810_64/bin/mingw32-make.exe"
+
+#Build application
+cmake --build .build --config Debug
