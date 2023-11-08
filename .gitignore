@@ -1,0 +1,4 @@
+# Directories
+.qt
+.venv
+.build

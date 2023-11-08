@@ -1,0 +1,11 @@
+#Install aqt
+aqt install-qt windows desktop 6.6.0 win64_msvc2019_64
+
+#Create Build System
+.\.qt\6.6.0\msvc2019_64\bin\qt-cmake.bat -B .build -S . 
+
+#Build application
+cmake --build .build --target ALL_BUILD --config Debug
+
+#Deploy application
+.\.qt\6.6.0\msvc2019_64\bin\windeployqt.exe .\.build\Debug
