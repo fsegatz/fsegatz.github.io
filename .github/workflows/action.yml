@@ -27,26 +27,35 @@ jobs:
           repository: emscripten-core/emsdk
           path: .emsdk
 
+      - name: Cache emsdk installation
+        id: cache-emsdk
+        uses: actions/cache@v3
+        with:
+          path: .emsdk
+          key: emsdk
+
       - name: Install emsdk
+        if: steps.cache-emsdk.outputs.cache-hit != 'true'
         run: .emsdk/emsdk install 3.1.37
 
       - name: Activate emsdk
         run: .emsdk/emsdk activate 3.1.37
 
-      - name: Add emsdk to path
-        run: source .emsdk/emsdk_env.sh
-
-      - name: Install QT
-        run: python -m aqt install-qt linux desktop 6.6.0 wasm_singlethread --autodesktop -O .qt
-
       - name: Cache QT installation
+        id: cache-qt
         uses: actions/cache@v3
         with:
           path: .qt
           key: qt
 
+      - name: Install QT
+        if: steps.cache-qt.outputs.cache-hit != 'true'
+        run: python -m aqt install-qt linux desktop 6.6.0 wasm_singlethread --autodesktop -O .qt
+
       - name: Create Build System
-        run: bash .qt/6.6.0/wasm_singlethread/bin/qt-cmake -G "Unix Makefiles" -B .build -S . -DQT_HOST_PATH=".qt/6.6.0/gcc_64" -DCMAKE_PREFIX_PATH=".qt/6.6.0/wasm_singlethread"
+        run: |
+          source .emsdk/emsdk_env.sh
+          bash .qt/6.6.0/wasm_singlethread/bin/qt-cmake -G "Unix Makefiles" -B .build -S . -DQT_HOST_PATH=".qt/6.6.0/gcc_64" -DCMAKE_PREFIX_PATH=".qt/6.6.0/wasm_singlethread"
 
       - name: Build Application
         run: cmake --build .build
