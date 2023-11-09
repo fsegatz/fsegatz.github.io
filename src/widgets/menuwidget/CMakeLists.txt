@@ -1,6 +1,6 @@
 add_library(menuwidget STATIC
-    menuWidget.cpp
-    menuWidget.h
+    menuwidget.cpp
+    menuwidget.h
 )
 
 target_link_libraries(menuwidget PRIVATE

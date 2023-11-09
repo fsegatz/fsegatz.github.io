@@ -1,7 +1,7 @@
 add_executable(index
     main.cpp
-    mainWindow.cpp
-    mainWindow.h
+    mainwindow.cpp
+    mainwindow.h
 )
 
 target_link_libraries(index PRIVATE

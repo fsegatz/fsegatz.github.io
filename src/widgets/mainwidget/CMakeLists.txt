@@ -1,6 +1,6 @@
 add_library(mainwidget STATIC
-    mainWidget.cpp
-    mainWidget.h
+    mainwidget.cpp
+    mainwidget.h
 )
 
 target_link_libraries(mainwidget PRIVATE
