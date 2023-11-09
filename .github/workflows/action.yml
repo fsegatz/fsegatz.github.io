@@ -58,14 +58,14 @@ jobs:
           bash .qt/6.6.0/wasm_singlethread/bin/qt-cmake -G "Unix Makefiles" -B .build -S . -DQT_HOST_PATH=".qt/6.6.0/gcc_64" -DCMAKE_PREFIX_PATH=".qt/6.6.0/wasm_singlethread"
 
       - name: Build Application
-        run: cmake --build .build
+        run: cmake --build .build -v
 
       - name: Deploy
         uses: s0/git-publish-subdir-action@v2.6.0
         env:
           REPO: self
           BRANCH: gh-pages
-          FOLDER: .build/main
+          FOLDER: .build/app
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Setup tmate session
