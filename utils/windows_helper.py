@@ -23,6 +23,7 @@ parser.add_argument('--clean', action='store_true', help='Clean the build direct
 parser.add_argument('--build', action='store_true', help='Build the project')
 parser.add_argument('--deploy', action='store_true', help='Deploy the project')
 parser.add_argument('--run', action='store_true', help='Run the project')
+parser.add_argument('--test', action='store_true', help='Run the tests')
 args = parser.parse_args()
 
 if args.setup:
@@ -66,10 +67,18 @@ if args.build:
         print("The build directory already exists, please remove it or use the --clean flag")
 
 if args.deploy:
-    # Deploy the project with .\.qt\6.6.0\msvc2019_64\bin\windeployqt.exe .\.build\Debug
-    subprocess.run([os.path.join(qt_path, args.qt_version, args.qt_arch, "bin", "windeployqt.exe"), 
-                    os.path.join(build_path, "Debug")], 
-                    stdout=sys.stdout, stderr=sys.stderr, text=True)
+    # Copy dependencies of every executable in the build directory
+    for file in os.listdir(os.path.join(build_path, "Debug")):
+        if file.endswith(".exe"):
+           subprocess.run([os.path.join(qt_path, args.qt_version, args.qt_arch, "bin", "windeployqt.exe"),
+                            os.path.join(build_path, "Debug", file)],
+                            stdout=sys.stdout, stderr=sys.stderr, text=True)
+        #    subprocess.run([os.path.join(qt_path, args.qt_version, args.qt_arch, "bin", "windeployqt.exe"), 
+        #             os.path.join(build_path, "Debug")], 
+        #             stdout=sys.stdout, stderr=sys.stderr, text=True) 
+
+if args.test:
+    subprocess.run(["ctest", "--test-dir", ".build", "-C", "Debug", "--output-on-failure"] , stdout=sys.stdout, stderr=sys.stderr, text=True)
 
 if args.run:
     subprocess.run([os.path.join(build_path, "Debug", "index.exe")], 
